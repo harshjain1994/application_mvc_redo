@@ -4,7 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_borr_lender extends CI_Model {
 	    
-       
+         public function cancle_request_bl($id)
+         {
+             // $data=array('last_login'=>current_login,'current_login'=>date('Y-m-d H:i:s'));
+              //$this->db->where('id','some_id');
+              //$this->db->update('login_table',$data);
+         }
 	      public function admin_userdata()
 		  { 
         	  $admin_id=$this->session->userdata('admin_id');

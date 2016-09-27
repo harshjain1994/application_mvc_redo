@@ -52,9 +52,9 @@
                                  
                            //  echo "<td>".$d['borrow_amount']."</td>";
                            //  echo "<td><a  class='btn btn-success' href='borr_request.php'>accept request</a></td>";
-                           echo  "<td><a href='accept_request.php'><span class='btn btn-success btn-sm'>request accept</span></a>&nbsp; 
+                            echo  "<td><a href='accept_request.php'><span class='btn btn-success btn-sm'>request accept</span></a>&nbsp; 
                                 /&nbsp;&nbsp;
-                             <a href='cancle_request.php'><span class='btn btn-success btn-sm'>cancle request</span></a></td>"; 
+                             <a href='".base_url()."ad_user/cancle_request/".$d['id']."'><span class='btn btn-success btn-sm'>cancle request</span></a></td>"; 
                           echo "</tr>";
                          
                           }

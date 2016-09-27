@@ -65,7 +65,27 @@ class Login extends CI_Controller {
 	      // echo  validation_errors();
 	   }
 	  }
-	
+	  public function regis()
+	  {
+       
+           $this->load->view('header');
+
+           $option=$this->uri->segment(3);
+           if($option==1)
+           {
+           
+               $this->load->view('regis_b');
+            
+
+           }else{
+
+           
+             $this->load->view('regis_l');          
+
+               }
+         $this->load->view('footer');
+	  }
+
 	  public function user_logout()
 	  {
            

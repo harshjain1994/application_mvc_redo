@@ -4,6 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class ad_user extends CI_Controller {
 
 	
+  public function cancle_request()
+  {
+     $id=$this->uri->segment(3);
+     // echo $id;
+     $da['id']=$id;
+      $this->load->model('admin_borr_lender'); 
+     // echo $da['id']; 
+     $this->admin_borr_lender->cancle_request_bl($da);
+
+  }
 	public function admin_user()
 	{  
         $this->load->model('login_user');
