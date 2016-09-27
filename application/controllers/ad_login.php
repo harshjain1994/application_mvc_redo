@@ -15,6 +15,7 @@ class ad_login extends CI_Controller {
           $this->load->view('admin/dashboard',$da);
            
      }
+     
 	 
 	  public function borrower_user()
 	  {

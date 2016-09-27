@@ -1,9 +1,11 @@
 <?php  foreach($email as $em)
-             {
+             { $image=$em->image;
+
                $email= $em->email;  
                $user_name=explode('@', $email); 
                $u= $user_name[0];
-           }  ?>
+           }  
+          // echo $image;?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,7 +129,16 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                   <?php if(empty($image))
+                    {
+                     echo "<img src='".base_url()."/uploads/user.png'   class='user-image' alt='User Image'>";
+              
+                     }else{
+
+                      echo "<img src='".base_url().$image."'  class='user-image' alt='User Image'>";
+               
+                   }
+                   ?>
                       </div>
                       <p>Why not buy a new awesome theme?</p>
                     </a>
@@ -157,8 +168,15 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php
+              <?php if(empty($image))
+              {
+              echo "<img src='".base_url()."/uploads/user.png'  width='5%' height='5%' class='user-image' alt='User Image'>";
+              
+              }else{
+
+                echo "<img src='".base_url().$image."' width='5%' height='5%' class='user-image' alt='User Image'>";
+              
+              }?><span class="hidden-xs"><?php
            
            echo $u;?></span>
              
@@ -167,8 +185,19 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
+
+                 <?php if(empty($image))
+                  {
+                   echo "<img src='".base_url()."/uploads/user.png'   class='user-image' alt='User Image'>";
+              
+                  }else{
+
+                   echo "<img src='".base_url().$image."'  class='user-image' alt='User Image'>";
+               
+                   }
+
+              ?>
                 <p><?php echo $u;?>
                 </p>
               </li>
@@ -206,7 +235,16 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <?php if(empty($image))
+                  {
+                   echo "<img src='".base_url()."/uploads/user.png'   class='user-image' alt='User Image'>";
+              
+                  }else{
+
+                   echo "<img src='".base_url().$image."'  class='user-image' alt='User Image'>";
+               
+                   }
+              ?>
         </div>
         <div class="pull-left info">
           <p><?php  echo $u; ?></p>
@@ -214,13 +252,13 @@
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <form action="#" method="get" class="form-horizontal">
         <div class="input-group">
+       
           <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-default"><i class="fa fa-search"></i>
+            <button type="submit" name="search" id="search-btn" class="btn btn-danger"><i class="fa fa-search"></i>
                 </button>
-              </span>
+             
         </div>
       </form>
       <!-- /.search form -->

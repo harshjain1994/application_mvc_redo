@@ -25,10 +25,17 @@
                             //fetch the borrower detail using type='borr' and active_request=1 and by id of borrower .
                            foreach($data as $d)
                           { 
+
                              echo "<tr>";
-                             echo "<td>".$d['user_name']."</td>";
-                            
-                             echo "<td><a href='".base_url()."ad_user/detail_b/".$d['id']."'>".$d['detail_user']."</td>";
+                             if(empty($d['image'])){
+                               echo "<td><img src='".base_url()."/uploads/user.png' width='20%' height='20%'/>&nbsp; &nbsp;&nbsp;".$d['user_name']."</td>";
+                             }else{
+
+                               echo "<td><img src='".base_url().$d['image']."' width='20%' height='20%'/>&nbsp; &nbsp;&nbsp;".$d['user_name']."</td>";
+
+                             }
+                             
+                              echo "<td><a href='".base_url()."ad_user/detail_b/".$d['id']."'>".$d['detail_user']."</td>";
                          // if and else condition logic for borrower amount
 
                               if($d['borrow_amount']!=0)
@@ -42,10 +49,12 @@
                                   echo "<td class='text-primary'><strong>not mentioned at yet</strong </td>";
 
                               }
-
+                                 
                            //  echo "<td>".$d['borrow_amount']."</td>";
-                             echo "<td><a  class='btn btn-success' href='borr_request.php'>accept request</a></td>";
-                             
+                           //  echo "<td><a  class='btn btn-success' href='borr_request.php'>accept request</a></td>";
+                           echo  "<td><a href='accept_request.php'><span class='btn btn-success btn-sm'>request accept</span></a>&nbsp; 
+                                /&nbsp;&nbsp;
+                             <a href='cancle_request.php'><span class='btn btn-success btn-sm'>cancle request</span></a></td>"; 
                           echo "</tr>";
                          
                           }

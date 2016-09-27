@@ -43,11 +43,12 @@ class Login_user extends CI_Model {
 
 	    }
 	}
+
 	public function admin_user()
 	{
          $admin_id=$this->session->userdata('admin_id');
 		  $que=$this->db
-		             ->select(['email'])
+		             ->select(['email','image'])
 		            ->from('admin')
 		           ->where('id',$admin_id)
 		           ->get();

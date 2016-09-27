@@ -4,13 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_borr_lender extends CI_Model {
 	    
+       
 	      public function admin_userdata()
 		  { 
         	  $admin_id=$this->session->userdata('admin_id');
 	       	  $que_u=$this->db
 	 	             ->where(['user_type',1])
 		             ->get('borrow_user');
-
+           
             //  $result=$que_u->result_array();
              // $user_id=$result[0]['id'];
              $data=array(array());
@@ -31,13 +32,17 @@ class Admin_borr_lender extends CI_Model {
  
                          //  echo $id1;
                          //image formation 
+                       $arr=array('id'=>$id1);
                     	  $imag_sel=$this->db
                    	                  ->select('image')
-                 	                  ->where(['id',$id1])
+                 	                  ->where($arr)
                  	                  ->get('borrow_user');
-                      	  $filter=$imag_sel->result();
-
-                    	 print_r($filter);
+                      	$fil=$imag_sel->result_array();
+                      // echo 
+                      // print_r($fil);
+                    	 //print_r($fil);
+                       $data[$i]['image'] = $fil[0]['image'];
+                       
                        $data[$i]['id'] =  $row->user_id;
                        $data[$i]['user_name']=$row->user_name;
                        $data[$i]['borrow_amount']=$row->borrow_amount;
