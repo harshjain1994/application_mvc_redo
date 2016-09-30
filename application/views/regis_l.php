@@ -1,7 +1,8 @@
   <div class="row row-no-gutter">
       <div class="col-md-4"></div>
         <div id="regis" class="col-md-10 col-md-offset-1 col-lg-4 col-lg-offset-0 grid-2">
-          <form  method="post"  id="defaultForm11" action="reg2.php"  onsubmit="return checkall();"  >
+         <?php  echo form_open('Login/regis_l');    ?>
+          <!--<form   id="defaultForm11" action="reg2.php"  onsubmit="return checkall();"  >-->
             <!--class='rd-mailform'--><!-- RD Mailform Type -->
             
             <div class="panel panel-danger">
@@ -44,7 +45,22 @@
                 <div class="form-group">
                    <label class="form-label" data-add-placeholder for="mailform-input-faname" >
                   </label>
-                   <input id="mailform-input-DOB"
+                 <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text'  name='DOB' class="form-control"  data-constraints="@NotEmpty"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker( {  format: 'DD/MM/YYYY'});
+                     
+            });
+        </script>
+                 <!--  <input id="mailform-input-DOB"
                           type="date"
                           name="DOB"
                           
@@ -52,7 +68,7 @@
                          class="form-control"
                          
                           data-constraints="@NotEmpty "/>
-                  </div>
+                  --></div>
                           
                  
               
@@ -63,7 +79,6 @@
                   <input 
                          type="text"
                          name="email"
-                         onkeyup="checkemail()"          
                          placeholder="email" 
                          class="form-control"
                          id="email"

@@ -14,12 +14,14 @@ class ad_user extends CI_Controller {
      $this->admin_borr_lender->cancle_request_bl($da);
 
   }
-	public function admin_user()
-	{  
-        $this->load->model('login_user');
-        $email=$this->login_user->admin_user();
-        $this->load->view('admin/dashboard',['email',$email]);
-	}
+
+   
+    	public function admin_user()
+	   {  
+         $this->load->model('login_user');
+         $email=$this->login_user->admin_user();
+         $this->load->view('admin/dashboard',['email',$email]);
+	   }
 
      public function borrower_check()
      {

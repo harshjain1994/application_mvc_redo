@@ -1,13 +1,13 @@
+<?php    foreach ($name as $n) :
+               $name= $n->user_name;
+          endforeach; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php /* $id=$_SESSION['id1'];
-          $mysql=mysqli_query($conn,"select * from borrow_user where id='$id'");
-          $rowsss=mysqli_fetch_array($mysql);
-           $borr_name=$rowsss['user_name'];
-         echo $borr_name; */ ?> | Dashboard</title>
+  <title><?= $name ?>| Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="assets/dist/css/jvectormap/jquery-jvectormap-1.2.2.css"> <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -68,20 +70,20 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
- <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
     </script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"/></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"/></script>
     
-     <script type="text/javascript" src="../jss/js/formValidation.js"></script>
+    <script type="text/javascript" src="../jss/js/formValidation.js"></script>
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+ <body class="hold-transition skin-blue sidebar-mini">
+ <div class="wrapper">
 
-  <header class="main-header">
+    <header class="main-header">
 
     <!-- Logo -->
     <a href="index2.html" class="logo">
@@ -153,61 +155,43 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-<?php    //  $sel=mysqli_query($conn,"select * from borrow_user where id='$id'");
-          //  $rows=mysqli_fetch_array($sel);
-           //  $img= $rows['image'];
+               <?php if(empty($image))
+                    {
+                     echo "<img src='".base_url()."/uploads/user.png'   class='user-image' alt='User Image'>";
+              
+                     }else{
 
-         //  if($img=="")
-           //      {
-     
- 
-                       
-                 ?>
-
-                <img src="dist/img/avatar5.png" class="img-circle " height="20px" widht="20px" alt="User Image">
-
-                 <?php                  
-             //    }
-               //  else{
-
-                ?>
-                <img src="<?php// echo $img;?>" class="img-circle"  height="20px" widht="20px" alt="User Image">
-
+                      echo "<img src='".base_url().$image."'  class='user-image' alt='User Image'>";
                
-               <?php // }
-                 ?>
+                   }
+                   ?>
 
               <span class="hidden-xs"><?php 
-            //   print_r($name);
-               foreach ($name as $n) {
-                 # code...
-               
-               echo $n->user_name;
-               } /*   $id=$_SESSION['id1'];
-         ech
-       $mysql=mysqli_query($conn,"select * from borrow_user where id='$id'");
-       $rowsss=mysqli_fetch_array($mysql);
-       $borr_name=$rowsss['user_name'];
-         echo "<strong>hello ".$borr_name."</strong>";?></span>
+           
+              
+          ?>
+          <strong>hello <?= $name ?></strong>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-             <?php 
+          
+               <p id="data_borrow_detail">
+             <?php if(empty($image))
+                    {
+                     echo "<img src='".base_url()."/uploads/user.png'   width='50%' height='50%' alt='User Image'>";
+              
+                     }else{
 
-                   include('image.php'); 
-        
-              ?>
-                <p id="data_borrow_detail">
-                 <?php
-                /*  $id=$_SESSION['id1'];
-                     $mysql=mysqli_query($conn,"select * from borrow_user where id='$id'");
-                     $rowsss=mysqli_fetch_array($mysql);
-                     $borr_name=$rowsss['user_name'];
-                     
-                     echo "<strong>hello ".$borr_name."</strong>";?>
-                    <small>Member since <?php //echo $rowsss['avt_date']; */
-                    ?></small>
+                      echo "<img src='".base_url().$image."'   width='50%' height='50%' alt='User Image'>";
+               
+                   }
+                   ?>
+
+               
+                     <small>Member since <?= $avt_date ?>
+                      
+                    </small>
                   </p>
                 </li>
                 <!-- Menu Body -->
@@ -215,6 +199,7 @@
                   <!-- /.row -->
               </li>
               <!-- Menu Footer-->
+          
               <li class="user-footer">
                 <div class="pull-left">
                   

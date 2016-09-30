@@ -1,14 +1,14 @@
-  </div>
+   </div>
         </div>
 
-        <div class="container">
-            <table class="table table-hover">
-                 <tbody>
-              <tr class="success">
-            
-             </tr>
-         </tbody>
-            </table>
+         <div class="container">
+             <table class="table table-hover">
+                  <tbody>
+               <tr class="success">
+             
+              </tr>
+          </tbody>
+             </table>
 
         </div>
    </header>
@@ -50,7 +50,7 @@
 
                <!---<form  method="post" action=""  id="defaultForm12">-->
             <!-- RD Mailform Type -->
-            <?php echo form_open('Login/user_login',['class'=>'form-horizontal']);?>
+            <?php echo form_open('Login/user_login',['class'=>'form-horizontal','id'=>'defaultForm12']);?>
             <input type="hidden" name="form-type" value="contact"/>
             <!-- END RD Mailform Type -->
             <div class="row">
@@ -110,7 +110,7 @@
                  ?>
                  <br/>
                  <a href="<?php echo base_url();?>/Login/regis/1" >register as a borrwer </a>||
-                  <a href="<?php echo base_url();?>/Login/regis/12">register as a lender </a>
+                  <a href="<?php echo base_url();?>Login/regis/2">register as a lender </a>
           </div>
              <?php// echo validation_errors();?>
             </div>
@@ -168,6 +168,20 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"/></script>
     
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+  $(document).ready(function() {   
+  //  $('#regis_b_f').click(function(){
+   // jQuery.ajax({
+   // type: "POST"
+    //url: "<?php //echo site_url('Login/ajax_regis_b') ?>",    
+   // //data: $("#defaultForm11").serialize(),
+    //success: function(res) {
+      //  $(".ajax_response_result").html(res);
+     //}
+    //});
+  //});
+});
+</script>
     
 
 <!-- </script> -->

@@ -43,15 +43,46 @@ class Login_user extends CI_Model {
 
 	    }
 	}
-
-	public function admin_user()
+    public function regis_b_user()
+    {
+      
+           $id=$this->session->userdata('id');
+	  	    $que=$this->db
+		               ->select('*')
+		              ->from('borrow_user')
+		              ->where('id' , $id)
+		              ->get();
+           return $que->result_array();
+	
+    }
+    public function regis_b($data)
 	{
-         $admin_id=$this->session->userdata('admin_id');
-		  $que=$this->db
-		             ->select(['email','image'])
-		            ->from('admin')
-		           ->where('id',$admin_id)
-		           ->get();
-        return $que->result();
+
+        $arr=array('user_email'=>$data['user_email']);
+        $this->db->insert('borrow_user', $data);
+        $sel_id=$this->db->select('id')
+                             ->from('borrow_user')
+                              ->where($arr)
+                               ->get();
+        if($sel_id->num_rows())
+	    {
+             return $sel_id->row()->id;
+
+	    }else{
+
+	    	return FALSE;
+	    }
+
+	}
+	 public function admin_user()
+	 {
+           $admin_id=$this->session->userdata('admin_id');
+	  	   $que=$this->db
+		               ->select(['email','image'])
+		              ->from('admin')
+		              ->where('id',$admin_id)
+		              ->get();
+           return $que->result();
 	}
 }
+      

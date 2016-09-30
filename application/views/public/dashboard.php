@@ -1,17 +1,3 @@
-<?php //session_start();
-     ///error_reporting();
- //require('../confg/db.php');
-
-  //if(!isset($_SESSION['id1'])|| empty($_SESSION['id1']))
-  //{  
-
-
-    //   header('location:../temp/site/index.php');
-
-
-  //}
-  
- ?>
 <?php require('header.php');?>  <!-- Left side column. contains the logo and sidebar -->
  <?php include('side_header.php');?>
   <!-- Content Wrapper. Contains page content --> 
@@ -26,18 +12,13 @@
         <li class="active">Dashboard</li>
       </ol>
     </section>
-              <?php 
-          /*    /* $sel="select * from borrow_user where id='$id' and user_type=1";
-               $select_type=mysqli_query($conn,$sel);
-               if(mysqli_num_rows($select_type)>0)
-               {
-                  echo "<h2 style='text-align:center; color:red;'>Hello borrow user!!</h2>";
-               }else{
-
-                 echo "<h2 style='text-align:center; color:red;'>Hello Lender user!!</h2>";
-
-               }
-              /*?>
+              <?php if($user_type==1):?>
+                     <h2 style='text-align:center; color:red;'>Hello borrow user!!</h2>
+                    <?php else:
+                       ?>
+                       <h2 style='text-align:center; color:red;'>Hello Lender user!!</h2>
+                     <?php endif;?>
+              
                <?php
 /*
                  $option = isset($_REQUEST['option'])==TRUE?$_REQUEST['option']:"";

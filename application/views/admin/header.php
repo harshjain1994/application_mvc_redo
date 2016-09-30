@@ -15,7 +15,9 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <?= link_tag('assets/dist/css/bootstrap.min.css');?>
 
+   
    <!-- Font Awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -30,7 +32,6 @@
 
    <?php echo link_tag('assets/dist/css/skins/_all-skins.min.css');?>
   
-     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen"  href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
       <style>
       box.box-info {
@@ -38,7 +39,8 @@
        }
   </style>
 
-
+<style>
+</style>
     <script type="text/javascript"
       src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
     </script> 
@@ -189,11 +191,11 @@
 
                  <?php if(empty($image))
                   {
-                   echo "<img src='".base_url()."/uploads/user.png'   class='user-image' alt='User Image'>";
+                   echo "<img src='".base_url()."/uploads/user.png'    alt='User Image'>";
               
                   }else{
 
-                   echo "<img src='".base_url().$image."'  class='user-image' alt='User Image'>";
+                   echo "<img src='".base_url().$image."'   alt='User Image'>";
                
                    }
 
@@ -252,13 +254,13 @@
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="form-horizontal">
+     <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-       
           <input type="text" name="q" class="form-control" placeholder="Search...">
-            <button type="submit" name="search" id="search-btn" class="btn btn-danger"><i class="fa fa-search"></i>
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
-             
+              </span>
         </div>
       </form>
       <!-- /.search form -->

@@ -28,10 +28,10 @@
 
                              echo "<tr>";
                              if(empty($d['image'])){
-                               echo "<td><img src='".base_url()."/uploads/user.png' width='20%' height='20%'/>&nbsp; &nbsp;&nbsp;".$d['user_name']."</td>";
+                               echo "<td><img src='".base_url()."/uploads/user.png' width='20%' height='30%'/>&nbsp; &nbsp;&nbsp;".$d['user_name']."</td>";
                              }else{
 
-                               echo "<td><img src='".base_url().$d['image']."' width='20%' height='20%'/>&nbsp; &nbsp;&nbsp;".$d['user_name']."</td>";
+                               echo "<td><img src='".base_url().$d['image']."' width='20%' height='30%'/>&nbsp; &nbsp;&nbsp;".$d['user_name']."</td>";
 
                              }
                              
@@ -52,9 +52,9 @@
                                  
                            //  echo "<td>".$d['borrow_amount']."</td>";
                            //  echo "<td><a  class='btn btn-success' href='borr_request.php'>accept request</a></td>";
-                            echo  "<td><a href='accept_request.php'><span class='btn btn-success btn-sm'>request accept</span></a>&nbsp; 
+                            echo  "<td><a href='accept_request.php'><span class='label label-success'>request accept</span></a>&nbsp; 
                                 /&nbsp;&nbsp;
-                             <a href='".base_url()."ad_user/cancle_request/".$d['id']."'><span class='btn btn-success btn-sm'>cancle request</span></a></td>"; 
+                             <a href='".base_url()."ad_user/cancle_request/".$d['id']."'><span class='label label-success'>cancle request</span></a></td>"; 
                           echo "</tr>";
                          
                           }
@@ -121,7 +121,7 @@
                           else{
                       
    */ ?>
-        <td><a href="#"><span class="label label-success"> accepted</span></a>
+        <!--<td><a href="#"><span class="label label-success"> accepted</span></a>-->
                       
      <?php
       /*  }  echo "</tr>";   

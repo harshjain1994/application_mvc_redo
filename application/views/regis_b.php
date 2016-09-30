@@ -1,14 +1,26 @@
   <div class="row row-no-gutter">
       <div class="col-md-4"></div>
         <div id="regis" class="col-md-10 col-md-offset-1 col-lg-4 col-lg-offset-0 grid-2">
-          <form  method="post"  id="defaultForm11" action="reg1.php"  onsubmit="return checkall();"  >
+          
+         <!-- <form  method="post" action='Login/regis_b'  onsubmit="return checkall();"  >-->
+             <?php echo form_open('Login/regis_b');?>
             <!--class='rd-mailform'--><!-- RD Mailform Type -->
             
             <div class="panel panel-danger">
              <div class="pane panel-heading">
               <h5 class="text-center" style='text-color:#fff;'>Borrower register</h5>
              </div>
+
              <div class="panel panel-body">
+             <?php if( $error = $this->session->flashdata('pass_f')): ?>
+                 
+                  <?=  $error; ?>
+                 </span>
+              <?php  
+              
+                 endif;
+              ?>
+             
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
@@ -19,7 +31,9 @@
                          placeholder="first name"              
                          class="form-control"
                          data-constraints="@NotEmpty @LettersOnly"/>
+
                      </div>
+                      <span><?php echo form_error('first_name');//echo "vr";?></span>
                  <div class="form-group">
                   <label class="form-label"></label>
                     <input id="mailform-input-fname"
@@ -29,6 +43,8 @@
                          class="form-control"
                          data-constraints="@NotEmpty @LettersOnly"/>
                 </div>
+
+                      <span><?php echo form_error('last_name'); ?></span>
                 <div class="form-group">
                   <label class="form-label" data-add-placeholder for="mailform-input-faname">
                    
@@ -41,6 +57,8 @@
                          class="form-control"
                          data-constraints="@NotEmpty @LettersOnly"/>
                 </div>
+                
+                      <span><?php echo form_error('father_name'); ?></span>
                 <div class="form-group">
                    <label class="form-label" data-add-placeholder for="mailform-input-faname" >
                   </label>
@@ -56,7 +74,7 @@
             
              <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text'  name='DOB' class="form-control"  data-constraints="@NotEmpty/>
+                    <input type='text'  name='DOB' class="form-control"  data-constraints="@NotEmpty"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -66,32 +84,29 @@
         <script type="text/javascript">
             $(function () {
                 $('#datetimepicker1').datetimepicker( {  format: 'DD/MM/YYYY'});
-
+                     
             });
         </script>
     </div>
 </div>
-
-
-                  </div>
-                          
-                 
-              
-            <div class="col-md-2"></div>
+   </div>
+   
+           <div class="col-md-2"></div>
                 <div class="input_form">
                   <label class="form-label" data-add-placeholder
                          for="mailform-input-email"></label>
                   <input 
                          type="text"
                          name="email"
-                         onkeyup="checkemail()"          
                          placeholder="email" 
                          class="form-control"
-                         id="email"
+                         
                          data-constraints="@NotEmpty @Email"/>
                   <span id="email_status"></span>
+               
+                      <span><?php echo form_error('email'); ?></span>
                 </div>
-
+            
                 <br/>
                 <div class="form-group">
                   <label class="form-label" data-add-placeholder
@@ -105,6 +120,8 @@
 
                          class="form-control"otEmpty"/>
                 </div>
+
+                      <span><?php echo form_error('pass'); ?></span>
                 <div class="form-group">
                   <label class="form-label" data-add-placeholder for="mailform-input-pass-confirm">
                     </label>
@@ -118,6 +135,7 @@
 
                 </div>
                      
+                      <span><?php echo form_error('c_pass'); ?></span>
                       <div class="form-group">
                         <label class="form-label" data-add-placeholder for="mailform-input-faname">
                          </label>
@@ -149,7 +167,7 @@
             <div class="row ">
               <div class="col-md-12">
                 <div class="form-group ">
-                  <input type="submit" name="submit1" class="btn btn-success"   value="register"/>
+                  <input type="submit" name="submit1"  id="regis_b_f" class="btn btn-success"   value="register"/>
                     
 
                      <br/><br/> <div class="social-auth-links text-center">

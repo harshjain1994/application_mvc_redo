@@ -2,7 +2,7 @@
 
              <div class="box box-info">
             <div class="box-header with-border">
-              <a href='<?= base_url('ad_login/borrower_user');?>' class='btn btn-danger'>borrow detail</a>||<a href='dashboard.php?option=lender' class='btn btn-danger'>lender detail</a>
+              <a href='<?= base_url('ad_login/borrower_user');?>' class='btn btn-danger'>borrow detail</a>||<a href='<?= base_url('ad_login/lender_user');?>' class='btn btn-danger'>lender detail</a>
                     <br/>
                     <br/>
 

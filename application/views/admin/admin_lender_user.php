@@ -1,6 +1,7 @@
+ <?php //echo $email;
 
+ include('header.php'); ?>
 
-<?php include('header.php'); ?>
 
              <div class="box box-info">
             <div class="box-header with-border">
@@ -9,19 +10,19 @@
                     <br/>
 
           <?php
-
+/*
                 $option = isset($_REQUEST['option'])==TRUE?$_REQUEST['option']:"";
                  // echo $option;
                     if($option=='borrow')
                     {
-                      include('borrow_detail.php');
-                    }
+   */                   include('lend_detail.php');
+     /*               }
                     else
                     {
                        include('lend_detail.php');
                      }
  
-          
+       */   
                ?>
 
               </div>
